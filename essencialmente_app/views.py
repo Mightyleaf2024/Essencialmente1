@@ -11,9 +11,10 @@ def avaliacao(request):
         form = Avaliar_IMCModelForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            messages.success(request,'Produto salvo com sucesso')
+            #chamar o formulario de novo para limpar 
+            messages.success(request,'dados salvos com sucesso')
         else:
-            messages.error(request,'Erro ao salvar o produto')
+            messages.error(request,'Erro ao salvar os dados')
     else:
         form = Avaliar_IMCModelForm()
     context = {
